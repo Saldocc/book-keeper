@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #00003a;
+  --border-radius: 5px;
+  --box-shadow: 0px 15px 30px 5px rgba(0, 0, 0, 0.3);
+  --trasition: all 0.2s ease;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: #ebecf1;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show-modal-btn {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  transition: var(--trasition);
+  margin: 3rem;
+}
+
+.show-modal-btn:hover {
+  box-shadow: var(--box-shadow);
+  filter: brightness(130%);
+}
+
+.container {
+  width: 580px;
+  background: #fafafb;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.container .item {
+  background: rgba(0, 141, 219, 0.2);
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.item .name {
+  display: flex;
+  align-items: center;
+}
+
+.name img {
+  margin-right: 0.5rem;
+  height: 20px;
+  width: 20px;
+}
+
+.name a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-trash {
+  z-index: 2;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Modal*/
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fafafb;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+
+.close-icon {
+  float: right;
+  color: #fafafb;
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.modal-header {
+  color: #fafafb;
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  color: var(--primary-color);
+  padding: 20px;
+}
+
+/*Form*/
+.form-group {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+  font-family: "Raleway", sans-serif;
+}
+
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+.save-btn {
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  margin-top: 5px;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  filter: brightness(120%);
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .show-modal-btn {
+    font-size: 24px;
+    margin: 2rem;
+  }
+  .container {
+    width: 95vw;
+  }
+}
